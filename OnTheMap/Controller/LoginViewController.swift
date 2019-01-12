@@ -6,7 +6,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -52,6 +52,11 @@ class LoginViewController: UIViewController {
         passwordTextField.isEnabled = !yes
         loginButton.isEnabled = !yes
         signUpButton.isEnabled = !yes
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

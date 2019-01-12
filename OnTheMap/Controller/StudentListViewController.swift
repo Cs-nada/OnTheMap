@@ -26,7 +26,7 @@ class StudentListViewController: UIViewController {
     func loadStudentLocationList() {
         ParseClient.getLocationList() { students, error in
             if let error = error {
-                print("Error downloading student locations: \(error.localizedDescription)")
+                self.showErrorMessage("Error downloading student locations", msg: error.localizedDescription)
             }
             else{
                 print("Downloaded \(students.count) student locations successfully")

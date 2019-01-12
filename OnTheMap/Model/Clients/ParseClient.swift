@@ -21,7 +21,7 @@ class ParseClient {
         
         var stringValue: String {
             switch self {
-            case .get100Locations: return Endpoints.base + "/StudentLocation?limit=100"
+            case .get100Locations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
             case .sendLocation: return Endpoints.base + "/StudentLocation"
             }
         }

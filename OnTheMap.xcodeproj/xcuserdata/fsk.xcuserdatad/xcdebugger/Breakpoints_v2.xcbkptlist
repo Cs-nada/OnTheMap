@@ -46,9 +46,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "taskForPOSTRequest(url:requestBody:responseType:completion:)"
-            landmarkType = "7">
+            endingLineNumber = "124">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,9 +60,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "taskForPOSTRequest(url:requestBody:responseType:completion:)"
-            landmarkType = "7">
+            endingLineNumber = "123">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -110,9 +106,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "taskForPOSTRequest(url:requestBody:responseType:completion:)"
-            landmarkType = "7">
+            endingLineNumber = "117">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
