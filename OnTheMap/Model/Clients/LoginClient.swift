@@ -19,12 +19,12 @@ class LoginClient {
     enum Endpoints {
         static let base = "https://onthemap-api.udacity.com/v1"
 
-        case getSession
+        case session
         case signUp
         
         var stringValue: String {
             switch self {
-                case .getSession: return Endpoints.base + "/session"
+                case .session: return Endpoints.base + "/session"
                 case .signUp: return "https://www.udacity.com/account/auth#!/signup"
             }
         }
@@ -37,7 +37,7 @@ class LoginClient {
     class func login(un: String, pw: String, completion: @escaping (Bool, Error?) -> Void) {
 
         let body = LoginRequest(udacity: CredentialsRequest(username: un, password: pw))
-        taskForPOSTRequest(url: Endpoints.getSession.url, requestBody: body, responseType: LoginResponse.self) { (responseObject, error) in
+        taskForPOSTRequest(url: Endpoints.session.url, requestBody: body, responseType: LoginResponse.self) { (responseObject, error) in
             guard let responseObject = responseObject else {
                 completion(false, error)
                 return
@@ -59,19 +59,55 @@ class LoginClient {
     
     class func logout(completion: @escaping () -> Void) {
         /*
-        var request = URLRequest(url: Endpoints.logout.url)
+
+         var xsrfCookie: HTTPCookie? = nil
+         let sharedCookieStorage = HTTPCookieStorage.shared
+         for cookie in sharedCookieStorage.cookies! {
+         if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+         }
+         if let xsrfCookie = xsrfCookie {
+         request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+         }
+         let session = URLSession.shared
+         let task = session.dataTask(with: request) { data, response, error in
+         if error != nil { // Handle error…
+         return
+         }
+         let range = Range(5..<data!.count)
+         let newData = data?.subdata(in: range) /* subset response data! */
+         print(String(data: newData!, encoding: .utf8)!)
+         }
+         task.resume()
+         */
+        
+        var request = URLRequest(url: Endpoints.session.url)
         request.httpMethod = "DELETE"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let body = LogoutRequest(sessionId: Auth.sessionId)
-        request.httpBody = try! JSONEncoder().encode(body)
+        
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+            if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+            request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            Auth.requestToken = ""
+            if let data = data {
+                let string1 = String(data: data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+                print(string1)
+            }
+            else {
+                print("Logout failed")
+            }
             Auth.sessionId = ""
-            completion()
+            DispatchQueue.main.async {
+                completion()
+            }
         }
         task.resume()
-        */
+ 
     }
     
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void){
@@ -105,8 +141,6 @@ class LoginClient {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         let jsonData = try! JSONEncoder().encode(requestBody)
-        let string1 = String(data: jsonData, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-        print(string1)
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

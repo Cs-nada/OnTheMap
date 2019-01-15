@@ -217,7 +217,7 @@
             </objects>
             <point key="canvasLocation" x="353" y="-370"/>
         </scene>
-        <!--Watchlist-->
+        <!--On The Map-->
         <scene sceneID="23l-cl-Cjy">
             <objects>
                 <viewController id="ubh-7q-yMI" customClass="WatchlistViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -253,8 +253,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3jn-B3-sZ0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Watchlist" id="1MN-MV-MzH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="yYD-6r-jXg">
+                    <navigationItem key="navigationItem" title="On The Map" id="1MN-MV-MzH">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="yYD-6r-jXg">
                             <connections>
                                 <action selector="logoutTapped:" destination="ubh-7q-yMI" id="ABZ-79-5au"/>
                             </connections>
