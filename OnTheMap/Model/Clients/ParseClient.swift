@@ -1,16 +1,17 @@
 //
-//  TMDBClient.swift
-//  TheMovieManager
+//  ParseClient.swift
+//  OnTheMap
 //
-//  Created by Owen LaRosa on 8/13/18.
-//  Copyright © 2018 Udacity. All rights reserved.
+//  Created by Frederik Skytte on 15/01/2019.
+//  Copyright © 2019 Udacity. All rights reserved.
 //
 
 import Foundation
 
-class TMDBClient {
-    
-    static let apiKey = "d9987f6d38c9c183d75323198a12406c"
+class ParseClient {
+
+    static let apiKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
+    static let appId = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
     
     struct Auth {
         static var accountId = 0
@@ -36,17 +37,17 @@ class TMDBClient {
         
         var stringValue: String {
             switch self {
-                case .getWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-                case .getFavorites: return Endpoints.base + "/account/\(Auth.accountId)/favorite/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-                case .getRequestToken: return Endpoints.base + "/authentication/token/new" + Endpoints.apiKeyParam
-                case .login: return "\(Endpoints.base)/authentication/token/validate_with_login\(Endpoints.apiKeyParam)"
-                case .getSessionId: return Endpoints.base + "/authentication/session/new" + Endpoints.apiKeyParam
-                case .webAuth: return "https://www.themoviedb.org/authenticate/\(Auth.requestToken)?redirect_to=skyttemovies:authenticate"
-                case .logout: return "\(Endpoints.base)/authentication/session\(Endpoints.apiKeyParam)"
-                case .search(let q): return "\(Endpoints.base)/search/movie\(Endpoints.apiKeyParam)&query=\(q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
-                case .markWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-                case .markFavorite: return Endpoints.base + "/account/\(Auth.accountId)/favorite" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-                case .posterImage(let imgPath): return "https://image.tmdb.org/t/p/w500/\(imgPath)"
+            case .getWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
+            case .getFavorites: return Endpoints.base + "/account/\(Auth.accountId)/favorite/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
+            case .getRequestToken: return Endpoints.base + "/authentication/token/new" + Endpoints.apiKeyParam
+            case .login: return "\(Endpoints.base)/authentication/token/validate_with_login\(Endpoints.apiKeyParam)"
+            case .getSessionId: return Endpoints.base + "/authentication/session/new" + Endpoints.apiKeyParam
+            case .webAuth: return "https://www.themoviedb.org/authenticate/\(Auth.requestToken)?redirect_to=skyttemovies:authenticate"
+            case .logout: return "\(Endpoints.base)/authentication/session\(Endpoints.apiKeyParam)"
+            case .search(let q): return "\(Endpoints.base)/search/movie\(Endpoints.apiKeyParam)&query=\(q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
+            case .markWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
+            case .markFavorite: return Endpoints.base + "/account/\(Auth.accountId)/favorite" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
+            case .posterImage(let imgPath): return "https://image.tmdb.org/t/p/w500/\(imgPath)"
             }
         }
         
@@ -91,8 +92,8 @@ class TMDBClient {
             if let responseObject = responseObject {
                 completion(
                     responseObject.statusCode == 1 ||
-                    responseObject.statusCode == 12 ||
-                    responseObject.statusCode == 13, nil)
+                        responseObject.statusCode == 12 ||
+                        responseObject.statusCode == 13, nil)
             }
             else{
                 completion(false, error)
@@ -133,18 +134,6 @@ class TMDBClient {
     
     class func getRequestToken(completion: @escaping (Bool, Error?) -> Void) {
         taskForGETRequest(url: Endpoints.getRequestToken.url, responseType: RequestTokenResponse.self) { (responseObject, error) in
-            guard let responseObject = responseObject else {
-                completion(false, error)
-                return
-            }
-            Auth.requestToken = responseObject.requestToken
-            completion(responseObject.success, nil)
-        }
-    }
-    
-    class func login(un: String, pw: String, completion: @escaping (Bool, Error?) -> Void) {
-        let body = LoginRequest(username: un, password: pw, requestToken: Auth.requestToken)
-        taskForPOSTRequest(url: Endpoints.login.url, requestBody: body, responseType: RequestTokenResponse.self) { (responseObject, error) in
             guard let responseObject = responseObject else {
                 completion(false, error)
                 return

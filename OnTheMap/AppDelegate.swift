@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TheMovieManager
 //
-//  Created by Owen LaRosa on 8/13/18.
+//  Created by Frederik s on 8/13/18.
 //  Copyright © 2018 Udacity. All rights reserved.
 //
 
@@ -17,17 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
-    }
-
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        if components?.scheme == "skyttemovies" && components?.path == "authenticate" {
-            let loginVC = window?.rootViewController as! LoginViewController
-            TMDBClient.getSessionId(completion: loginVC.getSessionHandler(success:error:))
-            return true
-        }
-        return false
     }
 }
 

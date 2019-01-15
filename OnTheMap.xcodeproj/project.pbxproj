@@ -35,6 +35,9 @@
 		2316888D2122322D003C820E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888C2122322D003C820E /* Colors.swift */; };
 		2316888F2122646A003C820E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888E2122646A003C820E /* GradientView.swift */; };
 		2316889121226AE7003C820E /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316889021226AE7003C820E /* LoginTextField.swift */; };
+		6FF17C6521EE0167006FFB0B /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6421EE0167006FFB0B /* LoginClient.swift */; };
+		6FF17C6721EE0199006FFB0B /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6621EE0199006FFB0B /* ParseClient.swift */; };
+		6FF17C6921EE07B1006FFB0B /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6821EE07B1006FFB0B /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		2316888C2122322D003C820E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2316888E2122646A003C820E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2316889021226AE7003C820E /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		6FF17C6421EE0167006FFB0B /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
+		6FF17C6621EE0199006FFB0B /* ParseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
+		6FF17C6821EE07B1006FFB0B /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				231688712121CB22003C820E /* Data */,
-				231688662121CA71003C820E /* TMDB Client */,
-				231688672121CA79003C820E /* TMDB Requests */,
-				231688682121CA87003C820E /* TMDB Responses */,
+				231688662121CA71003C820E /* Clients */,
+				231688672121CA79003C820E /* Requests */,
+				231688682121CA87003C820E /* Responses */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,16 +162,18 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		231688662121CA71003C820E /* TMDB Client */ = {
+		231688662121CA71003C820E /* Clients */ = {
 			isa = PBXGroup;
 			children = (
 				2316886B2121CAF6003C820E /* TMDBClient.swift */,
 				231688882121CC10003C820E /* TMDBTypes.swift */,
+				6FF17C6421EE0167006FFB0B /* LoginClient.swift */,
+				6FF17C6621EE0199006FFB0B /* ParseClient.swift */,
 			);
-			path = "TMDB Client";
+			path = Clients;
 			sourceTree = "<group>";
 		};
-		231688672121CA79003C820E /* TMDB Requests */ = {
+		231688672121CA79003C820E /* Requests */ = {
 			isa = PBXGroup;
 			children = (
 				2316887E2121CBC7003C820E /* MarkFavorite.swift */,
@@ -174,10 +182,10 @@
 				231688842121CBEA003C820E /* LogoutRequest.swift */,
 				231688862121CBF9003C820E /* PostSession.swift */,
 			);
-			path = "TMDB Requests";
+			path = Requests;
 			sourceTree = "<group>";
 		};
-		231688682121CA87003C820E /* TMDB Responses */ = {
+		231688682121CA87003C820E /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				231688742121CB43003C820E /* Movie.swift */,
@@ -185,8 +193,9 @@
 				231688782121CB74003C820E /* RequestTokenResponse.swift */,
 				2316887A2121CB87003C820E /* TMDBResponse.swift */,
 				2316887C2121CB9A003C820E /* SessionResponse.swift */,
+				6FF17C6821EE07B1006FFB0B /* LoginResponse.swift */,
 			);
-			path = "TMDB Responses";
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		231688712121CB22003C820E /* Data */ = {
@@ -281,11 +290,14 @@
 				231688812121CBD6003C820E /* MarkWatchlist.swift in Sources */,
 				231688612121CA30003C820E /* SearchViewController.swift in Sources */,
 				231688772121CB50003C820E /* MovieResults.swift in Sources */,
+				6FF17C6921EE07B1006FFB0B /* LoginResponse.swift in Sources */,
 				231688872121CBF9003C820E /* PostSession.swift in Sources */,
+				6FF17C6721EE0199006FFB0B /* ParseClient.swift in Sources */,
 				2316888D2122322D003C820E /* Colors.swift in Sources */,
 				2316888F2122646A003C820E /* GradientView.swift in Sources */,
 				2316887F2121CBC7003C820E /* MarkFavorite.swift in Sources */,
 				2316887B2121CB87003C820E /* TMDBResponse.swift in Sources */,
+				6FF17C6521EE0167006FFB0B /* LoginClient.swift in Sources */,
 				231688652121CA51003C820E /* FavoritesViewController.swift in Sources */,
 				231688492121C92C003C820E /* AppDelegate.swift in Sources */,
 				2316889121226AE7003C820E /* LoginTextField.swift in Sources */,
@@ -439,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/OnTheMap/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/OnTheMap/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,9 +1,7 @@
 //
 //  LoginViewController.swift
-//  TheMovieManager
 //
-//  Created by Owen LaRosa on 8/13/18.
-//  Copyright © 2018 Udacity. All rights reserved.
+//  Created by Frederik Skytte on 15/01/18.
 //
 
 import UIKit
@@ -13,49 +11,33 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var loginViaWebsiteButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        emailTextField.text = "ghostgob"
-        passwordTextField.text = "aphiw3au"
+        emailTextField.text = "fsk@computas.com"
+        passwordTextField.text = "passordet"
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
         setLoggingIn(true)
-        TMDBClient.getRequestToken(completion: requestTokenHandler(success:error:))
+        LoginClient.login(un: self.emailTextField.text ?? "", pw: self.passwordTextField.text ?? "", completion: self.loginHandler(success:error:))
     }
     
-    @IBAction func loginViaWebsiteTapped() {
-        setLoggingIn(true)
-        TMDBClient.getRequestToken { (success, error) in
-            if(success){
-                UIApplication.shared.open(TMDBClient.Endpoints.webAuth.url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-            }
-        }
-    }
-    
-    func requestTokenHandler(success: Bool, error: Error?){
-        print("requesttoken \(success)")
-        if(success){
-            TMDBClient.login(un: self.emailTextField.text ?? "", pw: self.passwordTextField.text ?? "", completion: self.loginHandler(success:error:))
-        }
+    @IBAction func signUpTapped() {
+        UIApplication.shared.open(LoginClient.Endpoints.signUp.url, options: [:], completionHandler: nil)
     }
     
     func loginHandler(success: Bool, error: Error?){
-        print("login \(success)")
-        if(success){
-            TMDBClient.getSessionId(completion: getSessionHandler(success:error:))
-        }
-    }
-    
-    func getSessionHandler(success: Bool, error: Error?){
-        print("session \(success)")
         setLoggingIn(false)
-        if(success){
+        print("login \(success)")
+        if success {
             self.performSegue(withIdentifier: "completeLogin", sender: nil)
+        }
+        else {
+            self.showLoginFailure(message: error?.localizedDescription ?? "Make sure Udacity credentials are ok, and that you are online")
         }
     }
     
@@ -66,11 +48,15 @@ class LoginViewController: UIViewController {
         else{
             activityIndicator.stopAnimating()
         }
-       
+        emailTextField.isEnabled = !yes
+        passwordTextField.isEnabled = !yes
+        loginButton.isEnabled = !yes
+        signUpButton.isEnabled = !yes
     }
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+    
+    func showLoginFailure(message: String) {
+        let alertVC = UIAlertController(title: "Login Failed", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        show(alertVC, sender: nil)
+    }
 }
