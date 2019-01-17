@@ -14,23 +14,12 @@
 		231688502121C92D003C820E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2316884F2121C92D003C820E /* Assets.xcassets */; };
 		231688532121C92D003C820E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231688512121C92D003C820E /* LaunchScreen.storyboard */; };
 		2316885F2121CA19003C820E /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316885E2121CA19003C820E /* MovieDetailViewController.swift */; };
-		231688612121CA30003C820E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688602121CA30003C820E /* SearchViewController.swift */; };
-		231688632121CA3D003C820E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688622121CA3D003C820E /* WatchlistViewController.swift */; };
-		231688652121CA51003C820E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688642121CA51003C820E /* FavoritesViewController.swift */; };
+		231688652121CA51003C820E /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688642121CA51003C820E /* StudentListViewController.swift */; };
 		2316886A2121CADA003C820E /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688692121CADA003C820E /* LoginButton.swift */; };
-		2316886C2121CAF6003C820E /* TMDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316886B2121CAF6003C820E /* TMDBClient.swift */; };
-		231688732121CB2D003C820E /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688722121CB2D003C820E /* MovieModel.swift */; };
-		231688752121CB43003C820E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688742121CB43003C820E /* Movie.swift */; };
-		231688772121CB50003C820E /* MovieResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688762121CB50003C820E /* MovieResults.swift */; };
-		231688792121CB74003C820E /* RequestTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688782121CB74003C820E /* RequestTokenResponse.swift */; };
-		2316887B2121CB87003C820E /* TMDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316887A2121CB87003C820E /* TMDBResponse.swift */; };
-		2316887D2121CB9A003C820E /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316887C2121CB9A003C820E /* SessionResponse.swift */; };
-		2316887F2121CBC7003C820E /* MarkFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316887E2121CBC7003C820E /* MarkFavorite.swift */; };
-		231688812121CBD6003C820E /* MarkWatchlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688802121CBD6003C820E /* MarkWatchlist.swift */; };
+		231688732121CB2D003C820E /* StudentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688722121CB2D003C820E /* StudentsModel.swift */; };
+		231688752121CB43003C820E /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688742121CB43003C820E /* StudentLocation.swift */; };
+		231688772121CB50003C820E /* StudentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688762121CB50003C820E /* StudentResults.swift */; };
 		231688832121CBE3003C820E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688822121CBE3003C820E /* LoginRequest.swift */; };
-		231688852121CBEA003C820E /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688842121CBEA003C820E /* LogoutRequest.swift */; };
-		231688872121CBF9003C820E /* PostSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688862121CBF9003C820E /* PostSession.swift */; };
-		231688892121CC10003C820E /* TMDBTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688882121CC10003C820E /* TMDBTypes.swift */; };
 		2316888B212230C8003C820E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888A212230C8003C820E /* UIViewController+Extension.swift */; };
 		2316888D2122322D003C820E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888C2122322D003C820E /* Colors.swift */; };
 		2316888F2122646A003C820E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888E2122646A003C820E /* GradientView.swift */; };
@@ -50,23 +39,12 @@
 		231688522121C92D003C820E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		231688542121C92D003C820E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2316885E2121CA19003C820E /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
-		231688602121CA30003C820E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		231688622121CA3D003C820E /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
-		231688642121CA51003C820E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		231688642121CA51003C820E /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
 		231688692121CADA003C820E /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		2316886B2121CAF6003C820E /* TMDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBClient.swift; sourceTree = "<group>"; };
-		231688722121CB2D003C820E /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
-		231688742121CB43003C820E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		231688762121CB50003C820E /* MovieResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResults.swift; sourceTree = "<group>"; };
-		231688782121CB74003C820E /* RequestTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTokenResponse.swift; sourceTree = "<group>"; };
-		2316887A2121CB87003C820E /* TMDBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBResponse.swift; sourceTree = "<group>"; };
-		2316887C2121CB9A003C820E /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
-		2316887E2121CBC7003C820E /* MarkFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkFavorite.swift; sourceTree = "<group>"; };
-		231688802121CBD6003C820E /* MarkWatchlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkWatchlist.swift; sourceTree = "<group>"; };
+		231688722121CB2D003C820E /* StudentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsModel.swift; sourceTree = "<group>"; };
+		231688742121CB43003C820E /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		231688762121CB50003C820E /* StudentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResults.swift; sourceTree = "<group>"; };
 		231688822121CBE3003C820E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		231688842121CBEA003C820E /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
-		231688862121CBF9003C820E /* PostSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSession.swift; sourceTree = "<group>"; };
-		231688882121CC10003C820E /* TMDBTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTypes.swift; sourceTree = "<group>"; };
 		2316888A212230C8003C820E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2316888C2122322D003C820E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2316888E2122646A003C820E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -143,9 +121,7 @@
 			children = (
 				2316884A2121C92C003C820E /* LoginViewController.swift */,
 				2316885E2121CA19003C820E /* MovieDetailViewController.swift */,
-				231688602121CA30003C820E /* SearchViewController.swift */,
-				231688622121CA3D003C820E /* WatchlistViewController.swift */,
-				231688642121CA51003C820E /* FavoritesViewController.swift */,
+				231688642121CA51003C820E /* StudentListViewController.swift */,
 				2316888A212230C8003C820E /* UIViewController+Extension.swift */,
 			);
 			path = Controller;
@@ -165,8 +141,6 @@
 		231688662121CA71003C820E /* Clients */ = {
 			isa = PBXGroup;
 			children = (
-				2316886B2121CAF6003C820E /* TMDBClient.swift */,
-				231688882121CC10003C820E /* TMDBTypes.swift */,
 				6FF17C6421EE0167006FFB0B /* LoginClient.swift */,
 				6FF17C6621EE0199006FFB0B /* ParseClient.swift */,
 			);
@@ -176,11 +150,7 @@
 		231688672121CA79003C820E /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				2316887E2121CBC7003C820E /* MarkFavorite.swift */,
-				231688802121CBD6003C820E /* MarkWatchlist.swift */,
 				231688822121CBE3003C820E /* LoginRequest.swift */,
-				231688842121CBEA003C820E /* LogoutRequest.swift */,
-				231688862121CBF9003C820E /* PostSession.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -188,11 +158,8 @@
 		231688682121CA87003C820E /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				231688742121CB43003C820E /* Movie.swift */,
-				231688762121CB50003C820E /* MovieResults.swift */,
-				231688782121CB74003C820E /* RequestTokenResponse.swift */,
-				2316887A2121CB87003C820E /* TMDBResponse.swift */,
-				2316887C2121CB9A003C820E /* SessionResponse.swift */,
+				231688742121CB43003C820E /* StudentLocation.swift */,
+				231688762121CB50003C820E /* StudentResults.swift */,
 				6FF17C6821EE07B1006FFB0B /* LoginResponse.swift */,
 			);
 			path = Responses;
@@ -201,7 +168,7 @@
 		231688712121CB22003C820E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				231688722121CB2D003C820E /* MovieModel.swift */,
+				231688722121CB2D003C820E /* StudentsModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -280,31 +247,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2316884B2121C92C003C820E /* LoginViewController.swift in Sources */,
-				231688732121CB2D003C820E /* MovieModel.swift in Sources */,
-				2316886C2121CAF6003C820E /* TMDBClient.swift in Sources */,
-				231688632121CA3D003C820E /* WatchlistViewController.swift in Sources */,
-				231688892121CC10003C820E /* TMDBTypes.swift in Sources */,
+				231688732121CB2D003C820E /* StudentsModel.swift in Sources */,
 				2316888B212230C8003C820E /* UIViewController+Extension.swift in Sources */,
-				231688852121CBEA003C820E /* LogoutRequest.swift in Sources */,
 				2316885F2121CA19003C820E /* MovieDetailViewController.swift in Sources */,
-				231688812121CBD6003C820E /* MarkWatchlist.swift in Sources */,
-				231688612121CA30003C820E /* SearchViewController.swift in Sources */,
-				231688772121CB50003C820E /* MovieResults.swift in Sources */,
+				231688772121CB50003C820E /* StudentResults.swift in Sources */,
 				6FF17C6921EE07B1006FFB0B /* LoginResponse.swift in Sources */,
-				231688872121CBF9003C820E /* PostSession.swift in Sources */,
 				6FF17C6721EE0199006FFB0B /* ParseClient.swift in Sources */,
 				2316888D2122322D003C820E /* Colors.swift in Sources */,
 				2316888F2122646A003C820E /* GradientView.swift in Sources */,
-				2316887F2121CBC7003C820E /* MarkFavorite.swift in Sources */,
-				2316887B2121CB87003C820E /* TMDBResponse.swift in Sources */,
 				6FF17C6521EE0167006FFB0B /* LoginClient.swift in Sources */,
-				231688652121CA51003C820E /* FavoritesViewController.swift in Sources */,
+				231688652121CA51003C820E /* StudentListViewController.swift in Sources */,
 				231688492121C92C003C820E /* AppDelegate.swift in Sources */,
 				2316889121226AE7003C820E /* LoginTextField.swift in Sources */,
-				2316887D2121CB9A003C820E /* SessionResponse.swift in Sources */,
-				231688792121CB74003C820E /* RequestTokenResponse.swift in Sources */,
 				231688832121CBE3003C820E /* LoginRequest.swift in Sources */,
-				231688752121CB43003C820E /* Movie.swift in Sources */,
+				231688752121CB43003C820E /* StudentLocation.swift in Sources */,
 				2316886A2121CADA003C820E /* LoginButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,41 +13,15 @@ class ParseClient {
     static let apiKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
     static let appId = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
     
-    struct Auth {
-        static var accountId = 0
-        static var requestToken = ""
-        static var sessionId = ""
-    }
-    
     enum Endpoints {
-        static let base = "https://api.themoviedb.org/3"
-        static let apiKeyParam = "?api_key=\(TMDBClient.apiKey)"
+        static let base = "https://parse.udacity.com/parse/classes"
         
-        case getWatchlist
-        case getFavorites
-        case getRequestToken
-        case login
-        case getSessionId
-        case webAuth
-        case logout
-        case search(String)
-        case markWatchlist
-        case markFavorite
-        case posterImage(String)
+        case get100Locations
         
         var stringValue: String {
             switch self {
-            case .getWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .getFavorites: return Endpoints.base + "/account/\(Auth.accountId)/favorite/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .getRequestToken: return Endpoints.base + "/authentication/token/new" + Endpoints.apiKeyParam
-            case .login: return "\(Endpoints.base)/authentication/token/validate_with_login\(Endpoints.apiKeyParam)"
-            case .getSessionId: return Endpoints.base + "/authentication/session/new" + Endpoints.apiKeyParam
-            case .webAuth: return "https://www.themoviedb.org/authenticate/\(Auth.requestToken)?redirect_to=skyttemovies:authenticate"
-            case .logout: return "\(Endpoints.base)/authentication/session\(Endpoints.apiKeyParam)"
-            case .search(let q): return "\(Endpoints.base)/search/movie\(Endpoints.apiKeyParam)&query=\(q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
-            case .markWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .markFavorite: return Endpoints.base + "/account/\(Auth.accountId)/favorite" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
-            case .posterImage(let imgPath): return "https://image.tmdb.org/t/p/w500/\(imgPath)"
+            case .get100Locations: return Endpoints.base + "/StudentLocation?limit=100"
+            
             }
         }
         
@@ -56,123 +30,23 @@ class ParseClient {
         }
     }
     
-    class func getWatchlist(completion: @escaping ([Movie], Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.getWatchlist.url, responseType: MovieResults.self) { (responseObject, error) in
+    class func getLocationList(completion: @escaping ([StudentLocation], Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.get100Locations.url, responseType: StudentResults.self) { (responseObject, error) in
             guard let responseObject = responseObject else {
                 completion([], error)
                 return
             }
             completion(responseObject.results, nil)
         }
-    }
-    
-    class func getFavorites(completion: @escaping ([Movie], Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.getFavorites.url, responseType: MovieResults.self) { (responseObject, error) in
-            guard let responseObject = responseObject else {
-                completion([], error)
-                return
-            }
-            completion(responseObject.results, nil)
-        }
-    }
-    
-    class func search(query: String, completion: @escaping ([Movie], Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.search(query).url, responseType: MovieResults.self) { (responseObject, error) in
-            guard let responseObject = responseObject else {
-                completion([], error)
-                return
-            }
-            completion(responseObject.results, nil)
-        }
-    }
-    
-    class func markWatchlist(movieId: Int, mark: Bool, completion: @escaping (Bool, Error?) -> Void) {
-        let body = MarkWatchlist(mediaType: MediaType.movie.rawValue, mediaId: movieId, watchlist: mark)
-        taskForPOSTRequest(url: Endpoints.markWatchlist.url, requestBody: body, responseType: TMDBResponse.self) { (responseObject, error) in
-            if let responseObject = responseObject {
-                completion(
-                    responseObject.statusCode == 1 ||
-                        responseObject.statusCode == 12 ||
-                        responseObject.statusCode == 13, nil)
-            }
-            else{
-                completion(false, error)
-            }
-        }
-    }
-    
-    class func markFavorite(movieId: Int, mark: Bool, completion: @escaping (Bool, Error?) -> Void) {
-        let body = MarkFavorite(mediaType: MediaType.movie.rawValue, mediaId: movieId, favorite: mark)
-        taskForPOSTRequest(url: Endpoints.markFavorite.url, requestBody: body, responseType: TMDBResponse.self) { (responseObject, error) in
-            if let responseObject = responseObject {
-                completion(
-                    responseObject.statusCode == 1 ||
-                        responseObject.statusCode == 12 ||
-                        responseObject.statusCode == 13, nil)
-            }
-            else{
-                completion(false, error)
-            }
-        }
-    }
-    
-    class func getImage(imgPath: String, completion: @escaping (Data?, Error?) -> Void) {
-        let task = URLSession.shared.dataTask(with: Endpoints.posterImage(imgPath).url) {
-            (data, response, error) in
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-                return
-            }
-            DispatchQueue.main.async {
-                completion(data, nil)
-            }
-        }
-        task.resume()
-    }
-    
-    class func getRequestToken(completion: @escaping (Bool, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.getRequestToken.url, responseType: RequestTokenResponse.self) { (responseObject, error) in
-            guard let responseObject = responseObject else {
-                completion(false, error)
-                return
-            }
-            Auth.requestToken = responseObject.requestToken
-            completion(responseObject.success, nil)
-        }
-    }
-    
-    class func getSessionId(completion: @escaping (Bool, Error?) -> Void) {
-        let body = PostSession(requestToken: Auth.requestToken)
-        taskForPOSTRequest(url: Endpoints.getSessionId.url, requestBody: body, responseType: SessionResponse.self) { (responseObject, error) in
-            guard let responseObject = responseObject else {
-                completion(false, error)
-                return
-            }
-            Auth.sessionId = responseObject.sessionId
-            completion(responseObject.success, nil)
-        }
-    }
-    
-    class func logout(completion: @escaping () -> Void) {
-        var request = URLRequest(url: Endpoints.logout.url)
-        request.httpMethod = "DELETE"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let body = LogoutRequest(sessionId: Auth.sessionId)
-        request.httpBody = try! JSONEncoder().encode(body)
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            Auth.requestToken = ""
-            Auth.sessionId = ""
-            completion()
-        }
-        task.resume()
     }
     
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void){
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        var request = URLRequest(url: url)
+        request.addValue(appId, forHTTPHeaderField: "X-Parse-Application-Id")
+        request.addValue(apiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
                 DispatchQueue.main.async {
                     completion(nil, error)
@@ -185,7 +59,31 @@ class ParseClient {
                     completion(responseObject, nil)
                 }
             }
-            catch {
+            catch let DecodingError.dataCorrupted(context) {
+                print(context)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch {
+                print("error: ", error)
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
@@ -214,7 +112,31 @@ class ParseClient {
                     completion(responseObject, nil)
                 }
             }
-            catch {
+            catch let DecodingError.dataCorrupted(context) {
+                print(context)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            } catch {
+                print("error: ", error)
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }

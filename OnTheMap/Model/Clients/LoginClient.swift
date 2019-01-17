@@ -11,8 +11,6 @@ import Foundation
 class LoginClient {
     
     struct Auth {
-        static var accountId = 0
-        static var requestToken = ""
         static var sessionId = ""
     }
     
