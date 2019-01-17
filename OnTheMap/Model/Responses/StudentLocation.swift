@@ -29,3 +29,14 @@ struct StudentLocation: Codable {
     let updatedAt: String?
     
 }
+
+extension StudentLocation {
+    
+    func getFullName() -> String {
+        return "\(firstName ?? "Anonymous") \(lastName ?? "Student")"
+    }
+    
+    func getUrlString() -> String {
+        return "\(mediaURL ?? "No URL provided for student")"
+    }
+}

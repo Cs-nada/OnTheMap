@@ -27,6 +27,7 @@
 		6FF17C6521EE0167006FFB0B /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6421EE0167006FFB0B /* LoginClient.swift */; };
 		6FF17C6721EE0199006FFB0B /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6621EE0199006FFB0B /* ParseClient.swift */; };
 		6FF17C6921EE07B1006FFB0B /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6821EE07B1006FFB0B /* LoginResponse.swift */; };
+		6FF17C6B21F0AD85006FFB0B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6A21F0AD85006FFB0B /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		6FF17C6421EE0167006FFB0B /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
 		6FF17C6621EE0199006FFB0B /* ParseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		6FF17C6821EE07B1006FFB0B /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		6FF17C6A21F0AD85006FFB0B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				2316885E2121CA19003C820E /* MovieDetailViewController.swift */,
 				231688642121CA51003C820E /* StudentListViewController.swift */,
 				2316888A212230C8003C820E /* UIViewController+Extension.swift */,
+				6FF17C6A21F0AD85006FFB0B /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				231688832121CBE3003C820E /* LoginRequest.swift in Sources */,
 				231688752121CB43003C820E /* StudentLocation.swift in Sources */,
 				2316886A2121CADA003C820E /* LoginButton.swift in Sources */,
+				6FF17C6B21F0AD85006FFB0B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

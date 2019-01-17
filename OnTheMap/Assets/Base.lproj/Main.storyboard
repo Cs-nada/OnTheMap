@@ -236,14 +236,28 @@
             </objects>
             <point key="canvasLocation" x="353" y="-370"/>
         </scene>
-        <!--Map Scene-->
+        <!--MapOfStudents-->
         <scene sceneID="23l-cl-Cjy">
             <objects>
-                <viewController id="ubh-7q-yMI" userLabel="Map Scene" sceneMemberID="viewController">
+                <viewController id="ubh-7q-yMI" userLabel="MapOfStudents" customClass="MapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="08a-YW-0dI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cXV-2U-GPL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ubh-7q-yMI" id="cAX-xN-U0P"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cXV-2U-GPL" firstAttribute="bottom" secondItem="3jn-B3-sZ0" secondAttribute="bottom" id="0Np-ap-kH9"/>
+                            <constraint firstItem="cXV-2U-GPL" firstAttribute="leading" secondItem="3jn-B3-sZ0" secondAttribute="leading" id="4Ug-Bt-6iL"/>
+                            <constraint firstItem="cXV-2U-GPL" firstAttribute="trailing" secondItem="3jn-B3-sZ0" secondAttribute="trailing" id="Wug-QE-NTc"/>
+                            <constraint firstItem="cXV-2U-GPL" firstAttribute="top" secondItem="3jn-B3-sZ0" secondAttribute="top" id="lBa-MV-PNM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3jn-B3-sZ0"/>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="1MN-MV-MzH">
@@ -254,12 +268,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapView" destination="cXV-2U-GPL" id="GIA-wh-GQT"/>
                         <segue destination="bMS-kJ-dg1" kind="show" identifier="showDetail" id="co5-nL-1jj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihk-cl-WFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1165.5999999999999" y="-370.16491754122939"/>
+            <point key="canvasLocation" x="1165.217391304348" y="-370.3125"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="6OI-h3-GV4">

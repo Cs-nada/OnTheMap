@@ -12,4 +12,9 @@ extension UIViewController {
         }
     }
     
+    func showUrlFailure() {
+        let alertVC = UIAlertController(title: "Action failed", message: "Invalid url provided by student", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        show(alertVC, sender: nil)
+    }
 }

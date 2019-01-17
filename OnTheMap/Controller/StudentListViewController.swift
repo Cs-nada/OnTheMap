@@ -8,7 +8,9 @@ class StudentListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadStudentLocationList()
+        if StudentsModel.studentLocations.count == 0 {
+            loadStudentLocationList()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,9 +27,7 @@ class StudentListViewController: UIViewController {
             else{
                 print("Downloaded \(students.count) student locations successfully")
                 StudentsModel.studentLocations = students
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                self.tableView.reloadData()
             }
         }
     }
@@ -48,8 +48,8 @@ extension StudentListViewController: UITableViewDataSource, UITableViewDelegate 
         
         let student = StudentsModel.studentLocations[indexPath.row]
         
-        cell.textLabel?.text = "\(student.firstName ?? "Anonymous") \(student.lastName ?? "Student")"
-        cell.detailTextLabel?.text = "\(student.mediaURL ?? "No URL provided for student")"
+        cell.textLabel?.text = student.getFullName()
+        cell.detailTextLabel?.text = student.getUrlString()
         return cell
     }
     
@@ -65,11 +65,4 @@ extension StudentListViewController: UITableViewDataSource, UITableViewDelegate 
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    func showUrlFailure() {
-        let alertVC = UIAlertController(title: "Action failed", message: "Invalid url provided by student", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        show(alertVC, sender: nil)
-    }
-    
 }
