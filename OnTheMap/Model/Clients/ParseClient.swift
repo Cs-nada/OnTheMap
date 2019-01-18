@@ -70,30 +70,7 @@ class ParseClient {
                     completion(responseObject, nil)
                 }
             }
-            catch let DecodingError.dataCorrupted(context) {
-                print(context)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch {
+            catch {
                 print("error: ", error)
                 DispatchQueue.main.async {
                     completion(nil, error)
@@ -125,30 +102,7 @@ class ParseClient {
                     completion(responseObject, nil)
                 }
             }
-            catch let DecodingError.dataCorrupted(context) {
-                print(context)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            } catch {
+            catch {
                 print("error: ", error)
                 DispatchQueue.main.async {
                     completion(nil, error)

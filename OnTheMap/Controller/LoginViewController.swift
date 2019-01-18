@@ -17,8 +17,8 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        emailTextField.text = "fsk@computas.com"
-        passwordTextField.text = "passordet"
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "completeLogin", sender: nil)
         }
         else {
-            self.showLoginFailure(message: error?.localizedDescription ?? "Make sure Udacity credentials are ok, and that you are online")
+            self.showErrorMessage("Login Failed", msg: error?.localizedDescription ?? "Make sure Udacity credentials are ok, and that you are online")
         }
     }
     
@@ -54,9 +54,4 @@ class LoginViewController: UIViewController {
         signUpButton.isEnabled = !yes
     }
     
-    func showLoginFailure(message: String) {
-        let alertVC = UIAlertController(title: "Login Failed", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        show(alertVC, sender: nil)
-    }
 }
