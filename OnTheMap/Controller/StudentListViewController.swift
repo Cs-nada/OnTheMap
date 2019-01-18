@@ -19,6 +19,10 @@ class StudentListViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func reloadDataTapped(_ sender: Any) {
+        loadStudentLocationList()
+    }
+
     func loadStudentLocationList() {
         ParseClient.getLocationList() { students, error in
             if let error = error {

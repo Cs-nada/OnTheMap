@@ -9,22 +9,8 @@
 import Foundation
 import MapKit
 
-/**
- * This view controller demonstrates the objects involved in displaying pins on a map.
- *
- * The map is a MKMapView.
- * The pins are represented by MKPointAnnotation instances.
- *
- * The view controller conforms to the MKMapViewDelegate so that it can receive a method
- * invocation when a pin annotation is tapped. It accomplishes this using two delegate
- * methods: one to put a small "info" button on the right side of each pin, and one to
- * respond when the "info" button is tapped.
- */
-
 class MapViewController: UIViewController {
     
-    // The map. See the setup in the Storyboard file. Note particularly that the view controller
-    // is set up as the map view's delegate.
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -41,6 +27,10 @@ class MapViewController: UIViewController {
         updateStudentLocationPins()
     }
     
+    @IBAction func reloadDataTapped(_ sender: Any) {
+        loadStudentLocationList()
+    }
+    
     func loadStudentLocationList() {
         ParseClient.getLocationList() { students, error in
             if let error = error {
@@ -55,12 +45,8 @@ class MapViewController: UIViewController {
     }
     
     func updateStudentLocationPins(){
-
-        var annotations = [MKPointAnnotation]()
         
-        // The "locations" array is loaded with the sample data below. We are using the dictionaries
-        // to create map annotations. This would be more stylish if the dictionaries were being
-        // used to create custom structs. Perhaps StudentLocation structs.
+        var annotations = [MKPointAnnotation]()
         
         for studLoc in StudentsModel.studentLocations {
             guard let lat = studLoc.latitude, let lon = studLoc.longitude else {

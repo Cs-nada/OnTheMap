@@ -17,11 +17,12 @@ class ParseClient {
         static let base = "https://parse.udacity.com/parse/classes"
         
         case get100Locations
+        case sendLocation
         
         var stringValue: String {
             switch self {
             case .get100Locations: return Endpoints.base + "/StudentLocation?limit=100"
-            
+            case .sendLocation: return Endpoints.base + "/StudentLocation"
             }
         }
         
@@ -38,6 +39,16 @@ class ParseClient {
             }
             completion(responseObject.results, nil)
         }
+    }
+    
+    class func sendLocation(userLocation: StudentLocation, completion: @escaping (Bool, Error?) -> Void) {
+        taskForPOSTRequest(url: Endpoints.sendLocation.url, requestBody: userLocation, responseType: StudentPostLocationResponse.self, completion: { (responseObject, error) in
+            guard responseObject != nil else {
+                completion(false, error)
+                return
+            }
+            completion(true, nil)
+        })
     }
     
     class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void){
@@ -96,6 +107,8 @@ class ParseClient {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.addValue(appId, forHTTPHeaderField: "X-Parse-Application-Id")
+        request.addValue(apiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try! JSONEncoder().encode(requestBody)
         
