@@ -2,8 +2,8 @@
 //  ShowLocationViewController.swift
 //  OnTheMap
 //
-//  Created by Frederik Skytte on 18/01/2019.
-//  Copyright © 2019 Udacity. All rights reserved.
+//  Created by Ndoo H on 16/01/2019.
+//  Copyright © 2019 Ndoo H. All rights reserved.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ class ShowLocationViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var sendButton: LoginButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

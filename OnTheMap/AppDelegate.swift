@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TheMovieManager
 //
-//  Created by Frederik s on 8/13/18.
-//  Copyright © 2018 Udacity. All rights reserved.
+//  Created by Ndoo H on 16/01/2019.
+//  Copyright © 2019 Ndoo H. All rights reserved.
 //
 
 import UIKit

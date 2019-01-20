@@ -2,10 +2,9 @@
 //  LoginClient.swift
 //  OnTheMap
 //
-//  Created by Frederik Skytte on 15/01/2019.
-//  Copyright © 2019 Udacity. All rights reserved.
+//  Created by Ndoo H on 16/01/2019.
+//  Copyright © 2019 Ndoo H. All rights reserved.
 //
-
 import Foundation
 
 class LoginClient {
@@ -56,27 +55,7 @@ class LoginClient {
 
     
     class func logout(completion: @escaping () -> Void) {
-        /*
-
-         var xsrfCookie: HTTPCookie? = nil
-         let sharedCookieStorage = HTTPCookieStorage.shared
-         for cookie in sharedCookieStorage.cookies! {
-         if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
-         }
-         if let xsrfCookie = xsrfCookie {
-         request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
-         }
-         let session = URLSession.shared
-         let task = session.dataTask(with: request) { data, response, error in
-         if error != nil { // Handle error…
-         return
-         }
-         let range = Range(5..<data!.count)
-         let newData = data?.subdata(in: range) /* subset response data! */
-         print(String(data: newData!, encoding: .utf8)!)
-         }
-         task.resume()
-         */
+  
         
         var request = URLRequest(url: Endpoints.session.url)
         request.httpMethod = "DELETE"

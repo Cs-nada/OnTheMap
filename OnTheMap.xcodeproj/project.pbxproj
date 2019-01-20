@@ -7,22 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2311AC0A2178E31500137A84 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2311AC092178E31500137A84 /* Colors.xcassets */; };
 		231688492121C92C003C820E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688482121C92C003C820E /* AppDelegate.swift */; };
 		2316884B2121C92C003C820E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316884A2121C92C003C820E /* LoginViewController.swift */; };
 		2316884E2121C92C003C820E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2316884C2121C92C003C820E /* Main.storyboard */; };
 		231688502121C92D003C820E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2316884F2121C92D003C820E /* Assets.xcassets */; };
-		231688532121C92D003C820E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231688512121C92D003C820E /* LaunchScreen.storyboard */; };
 		231688652121CA51003C820E /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688642121CA51003C820E /* StudentListViewController.swift */; };
-		2316886A2121CADA003C820E /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688692121CADA003C820E /* LoginButton.swift */; };
 		231688732121CB2D003C820E /* StudentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688722121CB2D003C820E /* StudentsModel.swift */; };
 		231688752121CB43003C820E /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688742121CB43003C820E /* StudentLocation.swift */; };
 		231688772121CB50003C820E /* StudentResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688762121CB50003C820E /* StudentResults.swift */; };
 		231688832121CBE3003C820E /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231688822121CBE3003C820E /* LoginRequest.swift */; };
 		2316888B212230C8003C820E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888A212230C8003C820E /* UIViewController+Extension.swift */; };
-		2316888D2122322D003C820E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888C2122322D003C820E /* Colors.swift */; };
-		2316888F2122646A003C820E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316888E2122646A003C820E /* GradientView.swift */; };
-		2316889121226AE7003C820E /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316889021226AE7003C820E /* LoginTextField.swift */; };
 		6F811CCA21F1D58100D961D4 /* StudentPostLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F811CC921F1D58100D961D4 /* StudentPostLocationResponse.swift */; };
 		6FF17C6521EE0167006FFB0B /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6421EE0167006FFB0B /* LoginClient.swift */; };
 		6FF17C6721EE0199006FFB0B /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF17C6621EE0199006FFB0B /* ParseClient.swift */; };
@@ -33,24 +27,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2311AC092178E31500137A84 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		231688452121C92C003C820E /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		231688482121C92C003C820E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2316884A2121C92C003C820E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2316884D2121C92C003C820E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2316884F2121C92D003C820E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		231688522121C92D003C820E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		231688542121C92D003C820E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		231688642121CA51003C820E /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListViewController.swift; sourceTree = "<group>"; };
-		231688692121CADA003C820E /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		231688722121CB2D003C820E /* StudentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsModel.swift; sourceTree = "<group>"; };
 		231688742121CB43003C820E /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		231688762121CB50003C820E /* StudentResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResults.swift; sourceTree = "<group>"; };
 		231688822121CBE3003C820E /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		2316888A212230C8003C820E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		2316888C2122322D003C820E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		2316888E2122646A003C820E /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		2316889021226AE7003C820E /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		6F811CC921F1D58100D961D4 /* StudentPostLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPostLocationResponse.swift; sourceTree = "<group>"; };
 		6FF17C6421EE0167006FFB0B /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
 		6FF17C6621EE0199006FFB0B /* ParseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
@@ -93,7 +81,6 @@
 				231688542121C92D003C820E /* Info.plist */,
 				231688482121C92C003C820E /* AppDelegate.swift */,
 				2316885A2121C941003C820E /* Model */,
-				2316885B2121C951003C820E /* View */,
 				2316885C2121C956003C820E /* Controller */,
 				2316885D2121C962003C820E /* Assets */,
 			);
@@ -109,17 +96,6 @@
 				231688682121CA87003C820E /* Responses */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		2316885B2121C951003C820E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2316888C2122322D003C820E /* Colors.swift */,
-				231688692121CADA003C820E /* LoginButton.swift */,
-				2316888E2122646A003C820E /* GradientView.swift */,
-				2316889021226AE7003C820E /* LoginTextField.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2316885C2121C956003C820E /* Controller */ = {
@@ -140,8 +116,6 @@
 			children = (
 				2316884C2121C92C003C820E /* Main.storyboard */,
 				2316884F2121C92D003C820E /* Assets.xcassets */,
-				231688512121C92D003C820E /* LaunchScreen.storyboard */,
-				2311AC092178E31500137A84 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -241,8 +215,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				231688532121C92D003C820E /* LaunchScreen.storyboard in Resources */,
-				2311AC0A2178E31500137A84 /* Colors.xcassets in Resources */,
 				231688502121C92D003C820E /* Assets.xcassets in Resources */,
 				2316884E2121C92C003C820E /* Main.storyboard in Resources */,
 			);
@@ -262,17 +234,13 @@
 				6FF17C6921EE07B1006FFB0B /* LoginResponse.swift in Sources */,
 				6FF17C6721EE0199006FFB0B /* ParseClient.swift in Sources */,
 				6F811CCA21F1D58100D961D4 /* StudentPostLocationResponse.swift in Sources */,
-				2316888D2122322D003C820E /* Colors.swift in Sources */,
-				2316888F2122646A003C820E /* GradientView.swift in Sources */,
 				6FF17C6521EE0167006FFB0B /* LoginClient.swift in Sources */,
 				231688652121CA51003C820E /* StudentListViewController.swift in Sources */,
 				231688492121C92C003C820E /* AppDelegate.swift in Sources */,
-				2316889121226AE7003C820E /* LoginTextField.swift in Sources */,
 				6FF17C6F21F1CAB0006FFB0B /* ShowLocationViewController.swift in Sources */,
 				231688832121CBE3003C820E /* LoginRequest.swift in Sources */,
 				231688752121CB43003C820E /* StudentLocation.swift in Sources */,
 				6FF17C6D21F0C040006FFB0B /* AddLocationViewController.swift in Sources */,
-				2316886A2121CADA003C820E /* LoginButton.swift in Sources */,
 				6FF17C6B21F0AD85006FFB0B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,14 +254,6 @@
 				2316884D2121C92C003C820E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		231688512121C92D003C820E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				231688522121C92D003C820E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -418,13 +378,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 694LAYWKJN;
 				INFOPLIST_FILE = "$(SRCROOT)/OnTheMap/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = no.skytte.onthemap;
+				PRODUCT_BUNDLE_IDENTIFIER = nada.onthemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,13 +397,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 694LAYWKJN;
 				INFOPLIST_FILE = "$(SRCROOT)/OnTheMap/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = no.skytte.onthemap;
+				PRODUCT_BUNDLE_IDENTIFIER = nada.onthemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

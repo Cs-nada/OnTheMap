@@ -2,8 +2,8 @@
 //  AddLocationViewController.swift
 //  OnTheMap
 //
-//  Created by Frederik Skytte on 17/01/2019.
-//  Copyright © 2019 Udacity. All rights reserved.
+//  Created by Ndoo H on 16/01/2019.
+//  Copyright © 2019 Ndoo H. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ class AddLocationViewController: UIViewController {
     
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var linkTextField: UITextField!
-    @IBOutlet weak var addLocButton: LoginButton!
+    @IBOutlet weak var addLocButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     lazy var geocoder = CLGeocoder()
     var enteredLocation: StudentLocation?

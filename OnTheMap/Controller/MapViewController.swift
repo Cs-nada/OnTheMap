@@ -2,8 +2,8 @@
 //  MapViewController.swift
 //  OnTheMap
 //
-//  Created by Frederik Skytte on 17/01/2019.
-//  Copyright © 2019 Udacity. All rights reserved.
+//  Created by Ndoo H on 16/01/2019.
+//  Copyright © 2019 Ndoo H. All rights reserved.
 //
 
 import Foundation
